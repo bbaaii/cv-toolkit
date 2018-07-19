@@ -44,7 +44,7 @@ class CarPlatteRecognitionWidget(QWidget):
         # set window title
         self.setWindowTitle('车牌识别 © v1.0')
         # set windows icon
-        self.setWindowIcon(QIcon('./image/icon.png'))
+        self.setWindowIcon(QIcon('./src/icon.png'))
 
 
         # show
@@ -116,7 +116,7 @@ class FaceRecognitionWidget(QWidget):
         # set window title
         self.setWindowTitle('人脸识别 © v1.0')
         # set windows icon
-        self.setWindowIcon(QIcon('./image/icon.png'))
+        self.setWindowIcon(QIcon('./src/icon.png'))
 
 
         # show
@@ -188,7 +188,7 @@ class OpticalCharacterRecognitionWidget(QWidget):
         # set window title
         self.setWindowTitle('印刷文字识别 © v1.0')
         # set windows icon
-        self.setWindowIcon(QIcon('./image/icon.png'))
+        self.setWindowIcon(QIcon('./src/icon.png'))
 
 
         # show
@@ -253,7 +253,7 @@ class HandWrittenRecognitionWidget(QWidget):
         # set window title
         self.setWindowTitle('手写汉字识别 © v1.0')
         # set windows icon
-        self.setWindowIcon(QIcon('./image/icon.png'))
+        self.setWindowIcon(QIcon('./src/icon.png'))
 
 
         # show
@@ -332,7 +332,7 @@ class MainWidget(QWidget):
         # set window title
         self.setWindowTitle('识别工具箱 CV toolkit © v1.0')
         # set windows icon
-        self.setWindowIcon(QIcon('./image/icon.png'))
+        self.setWindowIcon(QIcon('./src/icon.png'))
 
 
         # show
