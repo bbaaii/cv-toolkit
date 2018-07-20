@@ -1,6 +1,6 @@
 #!/bin/bash
-# Create the imagenet lmdb inputs
-# N.B. set the path to the imagenet train + val data dirs
+# 作者：李可艺
+# 创建于：2018-7-18
  
 EXAMPLE=trains/imagenet
 DATA=trains/imagenet/image
