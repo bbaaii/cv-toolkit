@@ -47,21 +47,31 @@ class CarPlatteRecognitionWidget(QWidget):
         self.setWindowIcon(QIcon('./src/icon.png'))
 
 
+        # args
+        self.file_name = ''
+
+
         # show
         self.show()
 
 
     def load_image(self):
-        file_name, _ = QFileDialog.getOpenFileName(self,
+        self.file_name, _ = QFileDialog.getOpenFileName(self,
                                                    '选择图片',
                                                    '',
                                                    'Image files(*.jpg *.gif *.png)')
-        self.pic_label.setPixmap(QPixmap(file_name).
+        self.pic_label.setPixmap(QPixmap(self.file_name).
                                  scaled(400, 300, Qt.KeepAspectRatioByExpanding))
 
 
     def process(self):
         try:
+            if self.file_name == '':
+                QMessageBox.information(self, '错误！找不到图片',
+                                        "请先上传图片！",
+                                        QMessageBox.Yes)
+                return
+
             from car_platte_recognition import main
             res, precision = main.predict(self.file_name)
 
@@ -119,22 +129,34 @@ class FaceRecognitionWidget(QWidget):
         self.setWindowIcon(QIcon('./src/icon.png'))
 
 
+        # args
+        self.file_name = ''
+
+
         # show
         self.show()
 
 
     def load_image(self):
-        file_name, _ = QFileDialog.getOpenFileName(self,
+        self.file_name, _ = QFileDialog.getOpenFileName(self,
                                                    '选择图片',
                                                    '',
                                                    'Image files(*.jpg *.gif *.png)')
-        self.pic_label.setPixmap(QPixmap(file_name).
+        self.pic_label.setPixmap(QPixmap(self.file_name).
                                  scaled(400, 300, Qt.KeepAspectRatioByExpanding))
 
 
 
     def process(self):
         try:
+            if self.file_name == '':
+                QMessageBox.information(self, '错误！找不到图片',
+                                        "请先上传图片！",
+                                        QMessageBox.Yes)
+                return
+
+            from car_platte_recognition import main
+
             from face_recognition import main
             list_, disp_image = main.predict(self.file_name)
 
@@ -191,21 +213,32 @@ class OpticalCharacterRecognitionWidget(QWidget):
         self.setWindowIcon(QIcon('./src/icon.png'))
 
 
+        # args
+        self.file_name = ''
+
+
         # show
         self.show()
 
 
     def load_image(self):
-        file_name, _ = QFileDialog.getOpenFileName(self,
+        self.file_name, _ = QFileDialog.getOpenFileName(self,
                                                    '选择图片',
                                                    '',
                                                    'Image files(*.jpg *.gif *.png)')
-        self.pic_label.setPixmap(QPixmap(file_name).
+        self.pic_label.setPixmap(QPixmap(self.file_name).
                                  scaled(400, 300, Qt.KeepAspectRatioByExpanding))
 
 
     def process(self):
         try:
+            if self.file_name == '':
+                QMessageBox.information(self, '错误！找不到图片',
+                                        "请先上传图片！",
+                                        QMessageBox.Yes)
+                return
+
+            from car_platte_recognition import main
             from optical_character_recognition import main
             res, precision = main.predict(self.file_name)
 
@@ -256,21 +289,31 @@ class HandWrittenRecognitionWidget(QWidget):
         self.setWindowIcon(QIcon('./src/icon.png'))
 
 
-        # show
+        # args
+        self.file_name = ''
+
+           # show
         self.show()
 
 
     def load_image(self):
-        file_name, _ = QFileDialog.getOpenFileName(self,
+        self.file_name, _ = QFileDialog.getOpenFileName(self,
                                                    '选择图片',
                                                    '',
                                                    'Image files(*.jpg *.gif *.png)')
-        self.pic_label.setPixmap(QPixmap(file_name).
+        self.pic_label.setPixmap(QPixmap(self.file_name).
                                  scaled(400, 300, Qt.KeepAspectRatioByExpanding))
 
 
     def process(self):
         try:
+            if self.file_name == '':
+                QMessageBox.information(self, '错误！找不到图片',
+                                        "请先上传图片！",
+                                        QMessageBox.Yes)
+                return
+
+            from car_platte_recognition import main
             from handwritten_recognition import main
             res, precision = main.predict(self.file_name)
 
